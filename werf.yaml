@@ -1,5 +1,0 @@
-project: werf-learning
-configVersion: 1
----
-image: app
-dockerfile: Dockerfile

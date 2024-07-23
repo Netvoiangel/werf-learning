@@ -3,3 +3,5 @@ const server = Bun.serve({
       return new Response("Bun!");
     },
   });
+
+  console.log('Server start at 3000');
