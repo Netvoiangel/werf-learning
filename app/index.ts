@@ -1,7 +1,8 @@
 const server = Bun.serve({
-    fetch(req) {
-      return new Response("Bun!");
+    port: 3000,
+    fetch(request) {
+      return new Response("Welcome to Bun!");
     },
   });
-
-  console.log('Server start at 3000');
+  
+  console.log(`Listening on ${server.url}`);
