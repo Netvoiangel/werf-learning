@@ -5,4 +5,4 @@ const server = Bun.serve({
     },
   });
   
-  console.log(`Listening on ${server.url}`);
+  console.log(`Listening on ${server.url}!!!`);
