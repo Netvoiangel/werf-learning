@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: werf-learning-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: werf-learning-app
+  template:
+    metadata:
+      labels:
+        app: werf-learning-app
+    spec:
+      imagePullSecrets:
+      - name: registrysecret
+      containers:
+      - name: app
+        image: {{ .Values.werf.image.app }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: werf-learning-app-srv
+spec:
+  selector:
+    app: werf-learning-app
+  ports:
+  - name: http-werf-learning
+    port: 3000
+    targetPort: 3000
+    protocol: TCP
+
